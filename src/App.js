@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import Loader from './components/Loader/Loader';
 import './App.css';
 import Scroll from './components/ScrollToTop';
+import Clock from './components/Clock';
 
 const Login = React.lazy(()=>import("./components/Login"));
 const Register = React.lazy(()=>import('./components/PatientRegister'));
@@ -16,6 +17,7 @@ const Header = React.lazy(()=>import('./components/HeaderComponent'));
 const Forget = React.lazy(()=>import('./components/Forget'));
 const Covidtest = React.lazy(()=>import('./components/Covidtest'));
 const Covidpatient = React.lazy(()=>import('./components/CovidPatient'));
+
 
 
 function App() {
@@ -66,15 +68,21 @@ function App() {
              exact path="/emergency"
               component={Emergency}
             />
+            
+           
             <Route
               path=""
               component={Header}
-            />       
+            />  
+
 
           </Switch>
           </Suspense>
+          
+          <Clock/>
         </BrowserRouter>
         <Scroll/>
+        
         <Footer />
       </div>
     );
